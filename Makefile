@@ -1,4 +1,4 @@
-.PHONY: all venv project install freeze test lint
+.PHONY: all venv project install freeze test lint run
 
 all: venv project
 
@@ -16,6 +16,9 @@ freeze:
 
 test:
 	uv run pytest -v
+
+run:
+	uv run python main.py
 
 lint:
 	uv run ruff check .
