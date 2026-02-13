@@ -10,9 +10,9 @@ def main():
     silvelis = lib.create_book("Anykščių šilelis", "Antanas Baranauskas", 1858)
 
     # Buy copies
-    copy1 = lib.add_book(devu_miskas)
-    copy2 = lib.add_book(devu_miskas)
-    copy3 = lib.add_book(altoriai)
+    lib.add_book(devu_miskas)
+    lib.add_book(devu_miskas)
+    lib.add_book(altoriai)
     lib.add_book(silvelis)
 
     print("=== Library after buying copies ===")
