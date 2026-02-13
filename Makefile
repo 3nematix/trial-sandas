@@ -1,11 +1,21 @@
-.PHONY: all venv project install freeze test lint run
+.PHONY: help project install freeze test lint format run
 
-all: venv project
-
-venv:
-	uv venv --clear
+help:
+	@echo "Usage: make <target>"
+	@echo ""
+	@echo "Setup:"
+	@echo "  project  - Create venv and install dependencies"
+	@echo "  install  - Install package in editable mode with dev deps"
+	@echo "  freeze   - List installed packages"
+	@echo ""
+	@echo "Development:"
+	@echo "  test     - Run tests"
+	@echo "  lint     - Run ruff linter"
+	@echo "  format   - Auto-fix lint issues"
+	@echo "  run      - Run demo script"
 
 project:
+	uv venv --clear
 	uv sync --extra dev
 
 install:
@@ -17,8 +27,11 @@ freeze:
 test:
 	uv run pytest -v
 
-run:
-	uv run python main.py
-
 lint:
 	uv run ruff check .
+
+format:
+	uv run ruff check . --fix
+
+run:
+	uv run python main.py

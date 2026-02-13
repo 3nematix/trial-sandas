@@ -10,20 +10,39 @@ Fizinės knygų bibliotekos sistema, realizuota naudojant OOP Python kalba.
 - Knygos kopijos grąžinimas — pažymi kopiją kaip prieinamą
 - Paieška — randa kopijas pagal tikslų autoriaus/pavadinimo atitikimą, surūšiuotas pagal metus (naujausios pirmos)
 
-## Setup
+## Reikalavimai
+
+- Python 3.12+
+- [uv](https://docs.astral.sh/uv/)
+
+## Pradžia
 
 ```bash
-make install
+make project
 ```
 
-## Tests
+## Komandos
 
-```bash
-make test
+```
+make help     - Rodyti galimas komandas
+make project  - Sukurti venv ir įdiegti priklausomybes
+make install  - Įdiegti paketą redagavimo režimu
+make freeze   - Rodyti įdiegtas bibliotekas
+make test     - Paleisti testus
+make lint     - Paleisti ruff linterį
+make format   - Automatiškai taisyti lint klaidas
+make run      - Paleisti demo skriptą
 ```
 
-## Demo
+## Struktūra
 
-```bash
-python main.py
+```
+library/
+├── __init__.py    # Eksportai
+├── models.py      # Book, BookCopy, BookStatus
+└── library.py     # Library klasė
+tests/
+├── test_models.py
+└── test_library.py
+main.py            # Demo skriptas
 ```
