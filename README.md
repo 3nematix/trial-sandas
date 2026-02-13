@@ -18,6 +18,7 @@ Fizinės knygų bibliotekos sistema, realizuota naudojant OOP Python kalba.
 ## Pradžia
 
 ```bash
+make uv       # Jei uv dar neįdiegtas
 make project
 ```
 
@@ -25,6 +26,7 @@ make project
 
 ```
 make help     - Rodyti galimas komandas
+make uv       - Įdiegti uv paketų tvarkyklę
 make project  - Sukurti venv ir įdiegti priklausomybes
 make install  - Įdiegti paketą redagavimo režimu
 make freeze   - Rodyti įdiegtas bibliotekas

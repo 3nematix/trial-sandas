@@ -1,9 +1,10 @@
-.PHONY: help project install freeze test lint format run
+.PHONY: help uv project install freeze test lint format run
 
 help:
 	@echo "Usage: make <target>"
 	@echo ""
 	@echo "Setup:"
+	@echo "  uv       - Install uv package manager"
 	@echo "  project  - Create venv and install dependencies"
 	@echo "  install  - Install package in editable mode with dev deps"
 	@echo "  freeze   - List installed packages"
@@ -13,6 +14,9 @@ help:
 	@echo "  lint     - Run ruff linter"
 	@echo "  format   - Auto-fix lint issues"
 	@echo "  run      - Run demo script"
+
+uv:
+	curl -LsSf https://astral.sh/uv/install.sh | sh
 
 project:
 	uv venv --clear
