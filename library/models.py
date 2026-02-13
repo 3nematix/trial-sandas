@@ -18,8 +18,8 @@ class Book:
 class BookCopy:
     def __init__(self, book: Book) -> None:
         self.id: uuid.UUID = uuid.uuid4()
-        self.book = book
-        self.status = BookStatus.AVAILABLE
+        self.book: Book = book
+        self.status: BookStatus = BookStatus.AVAILABLE
 
     def borrow(self) -> None:
         if self.status is BookStatus.BORROWED:
